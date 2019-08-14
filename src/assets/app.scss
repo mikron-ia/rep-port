@@ -1,0 +1,41 @@
+@import "_variables";
+
+body {
+  background-color: $color-background;
+
+  #app {
+    color: $color-font;
+    text-align: center;
+    font-family: monospace;
+
+    #header {
+      padding-top: 30px;
+    }
+
+    #nav {
+      font-size: 28px;
+      padding: 10px 0 20px;
+
+      a {
+        font-weight: bold;
+        color: $color-link;
+
+        &.router-link-exact-active {
+          color: $color-link-active;
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    #content {
+      border: darkviolet solid 3px;
+      border-radius: 10px;
+      max-width: 1024px;
+      margin: auto;
+      padding: 10px;
+    }
+  }
+}
