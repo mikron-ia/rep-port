@@ -5,12 +5,17 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    networkDictionary: {
-      "@-rep": {
-        name: "@-rep"
-      }
-    },
+    networkDictionary: [],
     people: {}
+  },
+  getters: {
+    networks: state => {
+      let networks: any = {};
+      state.networkDictionary.forEach(function(item: any) {
+        networks[item.tag] = item;
+      });
+      return networks;
+    }
   },
   mutations: {
     setNetworkDictionary(state, dictionary) {

@@ -1,6 +1,15 @@
 <template>
-  <div class="networks-description-box">
-      {{ network.name }}
+  <div
+    class="networks-description-box"
+    @click="descriptionVisible = !descriptionVisible"
+  >
+    <h2>
+      {{ network.tag }}: {{ network.name }}
+      <span class="label" :class="network.type">
+        {{ network.type.toUpperCase() }}
+      </span>
+    </h2>
+    <div v-show="descriptionVisible">{{ network.description }}</div>
   </div>
 </template>
 
@@ -9,7 +18,9 @@ export default {
   name: "NetworkDescription",
   props: ["network"],
   data() {
-    return {};
+    return {
+      descriptionVisible: false
+    };
   }
 };
 </script>

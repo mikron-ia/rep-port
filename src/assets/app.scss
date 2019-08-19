@@ -45,8 +45,53 @@ body {
 
       }
 
-      .network-descriptions {
+      .networks-dictionary {
+        h1 {
+          font-weight: bold;
+        }
 
+        .networks-description-box {
+          border: darkviolet solid 3px;
+          border-radius: 10px;
+          cursor: pointer;
+          padding: 10px 20px;
+          margin: 10px;
+          text-align: left;
+
+          h2 {
+            font-weight: bold;
+            padding: 0 10px;
+          }
+
+          .short {
+            font-style: italic;
+          }
+
+          .label {
+            color: whitesmoke;
+            background-color: grey;
+            float: right;
+            padding: 5px 10px;
+            border: grey solid 3px;
+            border-radius: 10px;
+            font-size: 1.6rem;
+
+            &.public {
+              background-color: green;
+              border-color: green;
+            }
+
+            &.protected {
+              background-color: darkorange;
+              border-color: darkorange;
+            }
+
+            &.private {
+              background-color: red;
+              border-color: red;
+            }
+          }
+        }
       }
     }
   }
