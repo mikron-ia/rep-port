@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <h1>What is this and how to use it?</h1>
     <p>
       This is an application for checking person's reputation networks. To
       retrieve the reputation data, choose a person from the list. If more
