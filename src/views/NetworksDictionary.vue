@@ -1,8 +1,8 @@
 <template>
   <div class="networks-dictionary">
     <h1>Available reputation networks</h1>
-    <div v-if="Object.entries(networks).length === 0">
-      No networks are available. This is likely a system error.
+    <div v-if="!areNetworksLoaded" class="error">
+      No networks available
     </div>
     <div v-for="network in networks" :key="network.name">
       <network-description :network="network"></network-description>
@@ -18,7 +18,12 @@ export default {
   name: "NetworksDictionary",
   components: { NetworkDescription },
   computed: {
-    ...mapGetters(["networks"])
+    ...mapGetters(["networks", "areNetworksLoaded"])
+  },
+  created() {
+    if (!this.areNetworksLoaded) {
+      this.$store.dispatch("loadNetworkDictionary");
+    }
   },
   data() {
     return {

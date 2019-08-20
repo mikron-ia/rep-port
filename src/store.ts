@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import uplink from "./uplink";
 
 Vue.use(Vuex);
 
@@ -9,6 +10,9 @@ export default new Vuex.Store({
     people: {}
   },
   getters: {
+    areNetworksLoaded: state => {
+      return state.networkDictionary.length > 0;
+    },
     networks: state => {
       let networks: any = {};
       state.networkDictionary.forEach(function(item: any) {
@@ -25,5 +29,11 @@ export default new Vuex.Store({
       state.people = people;
     }
   },
-  actions: {}
+  actions: {
+    loadNetworkDictionary({ commit }) {
+      uplink.getNetworks(response => {
+        commit("setNetworkDictionary", response.data);
+      });
+    }
+  }
 });

@@ -37,6 +37,17 @@ body {
       margin: auto;
       padding: 10px;
 
+      .error {
+        font-size: 32px;
+        font-weight: bold;
+        background-color: orangered;
+        border: orangered solid 3px;
+        border-radius: 20px;
+        padding: 20px;
+        color: whitesmoke;
+        text-transform: uppercase;
+      }
+
       .about {
         p {
           text-align: justify;
