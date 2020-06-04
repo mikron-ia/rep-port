@@ -4,7 +4,9 @@
       <h1>RepPort</h1>
     </div>
     <div id="nav">
-      <router-link to="/">Home</router-link>
+      <router-link to="/">News</router-link>
+      |
+      <router-link to="/people">People</router-link>
       |
       <router-link to="/network">Networks</router-link>
       |

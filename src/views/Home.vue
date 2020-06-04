@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <h1>People</h1>
+    <h1>News</h1>
     <p>Not yet implemented</p>
-    <p>Intended content: list of people with their scores</p>
+    <p>Intended content: list of notable changes and news</p>
   </div>
 </template>
 
