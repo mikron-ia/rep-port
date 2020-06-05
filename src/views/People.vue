@@ -15,12 +15,14 @@
 </template>
 
 <script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
 import { mapGetters } from "vuex";
 
-export default {
+@Component({
   name: "People",
   computed: {
     ...mapGetters(["isUserValid"])
   }
-};
+})
+export default class People extends Vue {}
 </script>
