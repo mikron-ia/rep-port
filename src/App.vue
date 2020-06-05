@@ -15,8 +15,22 @@
     <div id="content">
       <router-view />
     </div>
+    <div id="footer-nav">
+      <router-link v-if="isUserValid" to="/logout">Logout</router-link>
+    </div>
   </div>
 </template>
+
+<script>
+import { mapGetters } from "vuex";
+
+export default {
+  name: "People",
+  computed: {
+    ...mapGetters(["isUserValid"])
+  }
+};
+</script>
 
 <style lang="scss">
 @import "./../node_modules/bootstrap/scss/bootstrap";

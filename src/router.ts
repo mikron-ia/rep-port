@@ -4,6 +4,8 @@ import Home from "@/views/Home.vue";
 import People from "@/views/People.vue";
 import Network from "@/views/NetworksDictionary.vue";
 import About from "@/views/About.vue";
+import LoginViaToken from "@/components/LoginViaToken.vue";
+import Logout from "@/components/Logout.vue";
 
 Vue.use(Router);
 
@@ -28,6 +30,19 @@ export default new Router({
       path: "/about",
       name: "about",
       component: About
+    },
+    {
+      path: "/token-login",
+      name: "token-login",
+      component: LoginViaToken,
+      meta: {
+        layout: "plain"
+      }
+    },
+    {
+      path: "/logout",
+      name: "logout",
+      component: Logout
     }
   ]
 });

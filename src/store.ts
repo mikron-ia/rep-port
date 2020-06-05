@@ -7,11 +7,16 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     networkDictionary: [],
-    people: {}
+    people: {},
+    token: null,
+    username: null
   },
   getters: {
     areNetworksLoaded: state => {
       return state.networkDictionary.length > 0;
+    },
+    isUserValid: state => {
+      return state.token !== null; // todo: add proper verification
     },
     networks: state => {
       let networks: any = {};
@@ -27,6 +32,12 @@ export default new Vuex.Store({
     },
     setPeople(state, people) {
       state.people = people;
+    },
+    setSessionToken(state, token) {
+      state.token = token;
+    },
+    setUsername(state, username) {
+      state.username = username;
     }
   },
   actions: {
